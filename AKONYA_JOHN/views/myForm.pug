@@ -31,7 +31,6 @@ html(lang="en")
   body
     .container
       .py-5.text-center
-        img.d-block.mx-auto.mb-4(src="images/f.jpg" alt="" width="72" height="72")
         h2.myheader Student Details Entry Form
         p.lead
           | Note all fields markied with a red star (*). are required 
@@ -42,7 +41,7 @@ html(lang="en")
           
                 .row
                   .col-md-12.order-md-1
-                      form.needs-validation(novalidate="")
+                      form.needs-validation(novalidate="" method="POST" action='/mydata')
                         .row
                           .col-md-6.mb-3
                             label(for="Sur name") Sur name 
@@ -111,14 +110,13 @@ html(lang="en")
                              span.star * 
                              small.text-muted (Separate skills with commas)
                             textarea#exampleFormControlTextarea1.form-control(type="text" rows='3' placeholder="" name="skils" required="")
-                              | Valid entries are required.
                           .col-md-6.mb-3
                             .form-group
                             label(for='projects') Projects
                              span.star * 
                              small.text-muted (Separate projects with commas)
                             textarea#exampleFormControlTextarea1.form-control(type="text"  rows='3' placeholder="" name="projects" required="")
-                              | Valid entries are required.
+                               
                             br 
                           .row
                           .col-md-6.mb-3
@@ -126,10 +124,10 @@ html(lang="en")
                           .col-md-6.mb-3
                             .row.toRight
                               .col-md-3.mb-3
-                                button.btn.mybutton(type='button') Submit
+                                button.btn.mybutton(type='submit') Submit
 
                               .col-md-3.mb-3
-                                button(type="button" class="btn btn-outline-primary") Cancel
+                                button(type="reset" class="btn btn-outline-primary") Cancel
                             
 
         
