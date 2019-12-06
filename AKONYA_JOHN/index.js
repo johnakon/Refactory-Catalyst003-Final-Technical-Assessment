@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
-const mongodb = require("mongodb");
 
 const app = express();
 
@@ -23,13 +22,14 @@ mongoose.connect("mongodb://localhost:27017/refactory",() => {
 const userSchema = new mongoose.Schema({
   surname:{ type:String, unique : true, required : "surname required"},
   givenname:{ type:String, unique : true, required : "Lastname required"},
-  gender:{ type:String, required : "gender required"},
+  dob:{type:Date, required : "date of birth"},
+  gender:{ type:String, required : "gender"},
   country:{ type:String, required : "country required"},
   placeofResidence:{ type:String, required : "place of residence required"},
   phoneno:{ type:Number, required : "Phone no. required"},
   email:{ type:String, required : "email required"},
-  skills:{ type:String, required : "skills required"},
-  projects:{ type:String, required : "Parojects required"}
+  skills:{ type:String, required : "skills"},
+  projects:{ type:String, required : "Parojects"}
 
 })
 

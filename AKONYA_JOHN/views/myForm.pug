@@ -18,8 +18,8 @@ html(lang="en")
         align: right;
         background-color: #542a52;
       }
-      .toRight{
-        text-align: left;
+      .dgender{
+        border: 1px solid #ced4da;
       }
       label{
         color: #542a52
@@ -38,7 +38,6 @@ html(lang="en")
       .border
           .panel-body
               .container
-          
                 .row
                   .col-md-12.order-md-1
                       form.needs-validation(novalidate="" method="POST" action='/mydata')
@@ -55,20 +54,32 @@ html(lang="en")
                             input#lastName.form-control(type="text" placeholder="Enter your Given Name" value="" name="givenname" required="")
                             .invalid-feedback
                               | Valid last name is required.
-                        div.form-group
-                          label.form-check.form-check-inline Gender 
-                            span.star *
-                            input.form-check-input(type="radio" name="gender" value="Female")
-                            span.form-check-label Female
-
-                          label.form-check.form-check-inline
-                              input.form-check-input(type="radio" name="gender" value="Male")
-                              span.form-check-label Male
+                        .row
+                          .col-md-12.mb-3
+                            label(for="gender") Gender 
+                              span.star *
+                            div.form-row.dgender
+                              div.col.form-group
+                                  label.form-check.form-check-inline
+                                      input.form-check-input(type="radio" name="gender" value="male")
+                                      span.form-check-label Male
+                              div.col.form-group
+                                  label.form-check.form-check-inline
+                                      input.form-check-input(type="radio" name="gender" value="female")
+                                      .invalid-feedback
+                                        | Please select your gendery.
+                                      span.form-check-label Female
+                                     
+                                
+                          .col-md-6.mb-3
                         .row
                           .col-md-6.mb-3
-                            
-
-
+                              .form-group
+                                label Date of Birth
+                                input#exampleInputDOB1.form-control(type='date', placeholder='Date of Birth' name="dob" required="")
+                                .invalid-feedback
+                                  | Please select a valid country.
+                    
 
                           .col-md-6.mb-3
                             label(for="country") Country 
@@ -92,7 +103,7 @@ html(lang="en")
                           .col-md-6.mb-3
                             label(for="Phone number") Phone Number 
                               span.star *
-                            input#phoneno.form-control(type="text" name="phoneno" placeholder="Eg 07xxxxxxxx or _+256xxxxxxxx" required="")
+                            input#phoneno.form-control(type="text" name="phoneno" placeholder="Eg 07xxxxxxxx or +256xxxxxxxx" required="")
                             .invalid-feedback
                               | Phone number required.
                         .mb-3
@@ -109,19 +120,19 @@ html(lang="en")
                             label(for="Skills") Skills 
                              span.star * 
                              small.text-muted (Separate skills with commas)
-                            textarea#exampleFormControlTextarea1.form-control(type="text" rows='3' placeholder="" name="skils" required="")
+                            textarea#exampleFormControlTextarea1.form-control(type="text" placeholder="" name="skils" required="")
                           .col-md-6.mb-3
                             .form-group
                             label(for='projects') Projects
                              span.star * 
                              small.text-muted (Separate projects with commas)
-                            textarea#exampleFormControlTextarea1.form-control(type="text"  rows='3' placeholder="" name="projects" required="")
+                            textarea#exampleFormControlTextarea1.form-control(type="text" placeholder="" name="projects" required="")
                                
                             br 
                           .row
                           .col-md-6.mb-3
                              
-                          .col-md-6.mb-3
+                          .col-md-6.mb-3.float-right
                             .row.toRight
                               .col-md-3.mb-3
                                 button.btn.mybutton(type='submit') Submit
