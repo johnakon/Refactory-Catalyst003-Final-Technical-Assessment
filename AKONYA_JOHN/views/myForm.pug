@@ -14,7 +14,19 @@ html(lang="en")
       .myheader{
         background-color: #542a52
       }
-
+      .mybutton{
+        align: right;
+        background-color: #542a52;
+      }
+      .toRight{
+        text-align: left;
+      }
+      label{
+        color: #542a52
+      }
+      .star{
+        color: #c00000
+      }
     title #{title}
   body
     .container
@@ -26,7 +38,6 @@ html(lang="en")
 
       .border
           .panel-body
-            span.border
               .container
           
                 .row
@@ -34,19 +45,22 @@ html(lang="en")
                       form.needs-validation(novalidate="")
                         .row
                           .col-md-6.mb-3
-                            label(for="Sur name") Sur name *
+                            label(for="Sur name") Sur name 
+                              span.star *
                             input#firstName.form-control(type="text" placeholder="Enter your Sur name here" value="" required="")
                             .invalid-feedback
                               | Valid first name is required.
                           .col-md-6.mb-3
-                            label(for="Given name") Given name *
+                            label(for="Given name") Given name 
+                             span.star *
                             input#lastName.form-control(type="text" placeholder="Enter your Given Name" value="" required="")
                             .invalid-feedback
                               | Valid last name is required.
                         div.form-group
-                          label.form-check.form-check-inline Gender *
-                              input.form-check-input(type="radio" name="gender" value="Female")
-                              span.form-check-label Female
+                          label.form-check.form-check-inline Gender 
+                            span.star *
+                            input.form-check-input(type="radio" name="gender" value="Female")
+                            span.form-check-label Female
 
                           label.form-check.form-check-inline
                               input.form-check-input(type="radio" name="gender" value="Male")
@@ -58,76 +72,68 @@ html(lang="en")
 
 
                           .col-md-6.mb-3
-                            label(for="country") Country *
+                            label(for="country") Country 
+                              span.star *
                             select#country.custom-select.d-block.w-100(required="")
                               option(value="") Choose...
-                              option United States
+                              option Uganda
+                              option Rwanda
+                              option Tanzania
+                              option Kenya
                             .invalid-feedback
                               | Please select a valid country.
 
                         .row
                           .col-md-6.mb-3
-                            label(for="place of residence") Place of Residence *
+                            label(for="place of residence") Place of Residence 
+                              span.star *
                             input#address.form-control(type="text" placeholder="Enter your your current place of residence" required="")
                             .invalid-feedback
                               | Please Enter your your current place of residence.
                           .col-md-6.mb-3
-                            label(for="Phone number") Phone Number *
-                            input#zip.form-control(type="text" placeholder="Eg 07xxxxxxxx or _+256xxxxxxxx" required="")
+                            label(for="Phone number") Phone Number 
+                              span.star *
+                            input#phoneno.form-control(type="text" placeholder="Eg 07xxxxxxxx or _+256xxxxxxxx" required="")
                             .invalid-feedback
-                              | Zip code required.
+                              | Phone number required.
                         .mb-3
-                          label(for="email")
-                            | Email Address
+                          label(for="email") Email Address
+                            span.star *
                             //- span.text-muted (Optional)
                           input#email.form-control(type="email" placeholder="Eg applicant@gmail.com" required="")
                           .invalid-feedback
                             | Please enter a valid email address for shipping updates.
-                        .mb-3
-                          label(for="address") Address
-                          input#address.form-control(type="text" placeholder="1234 Le Palm Muyenga" required="")
-                          .invalid-feedback
-                            | Please enter your shipping address.
-                        //- .mb-3
-                        //-   label(for="address2")
-                        //-     | Address 2 
-                        //-     span.text-muted (Optional)
-                        //-   input#address2.form-control(type="text" placeholder="Apartment or suite" required="")
+             
                         .row
-                          .col-md-5.mb-3
-                            label(for="country") Country
-                            select#country.custom-select.d-block.w-100(required="")
-                              option(value="") Choose...
-                              option Uganda
-                              option Kenya
-                              option Rwanda
-                              otpion Tanzania
-                              option Burundi
-                            .invalid-feedback
-                              | Please select a valid country.
-                          .col-md-4.mb-3
-                            label(for="state") State
-                            select#state.custom-select.d-block.w-100(required="")
-                              option(value="") Choose...
-                              option California
-                            .invalid-feedback
-                              | Please provide a valid state.
-                          .col-md-3.mb-3
-                            label(for="zip") Zip
-                            input#zip.form-control(type="text" placeholder="" required="")
-                            .invalid-feedback
-                              | Zip code required.
-                        hr.mb-4
-                        button.btn.btn-primary.btn-lg.container(type="submit") Complete registration
-      footer.my-5.pt-5.text-muted.text-center.text-small
-        p.mb-1 © 2017-2019 JBC
-        ul.list-inline
-          li.list-inline-item
-            a(href="#") Privacy
-          li.list-inline-item
-            a(href="#") Terms
-          li.list-inline-item
-            a(href="#") Support
+                          .col-md-6.mb-3
+                            .form-group
+                            label(for="Skills") Skills 
+                             span.star * 
+                             small.text-muted (Separate skills with commas)
+                            textarea#exampleFormControlTextarea1.form-control(type="text" rows='3' placeholder="" required="")
+                              | Valid entries are required.
+                          .col-md-6.mb-3
+                            .form-group
+                            label(for='projects') Projects
+                             span.star * 
+                             small.text-muted (Separate projects with commas)
+                            textarea#exampleFormControlTextarea1.form-control(type="text"  rows='3' placeholder="" required="")
+                              | Valid entries are required.
+                            br 
+                          .row
+                          .col-md-6.mb-3
+                             
+                          .col-md-6.mb-3
+                            .row.toRight
+                              .col-md-3.mb-3
+                                button.btn.mybutton(type='button') Submit
+
+                              .col-md-3.mb-3
+                                button(type="button" class="btn btn-outline-primary") Cancel
+                            
+
+        
+
 
     script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
     script.
